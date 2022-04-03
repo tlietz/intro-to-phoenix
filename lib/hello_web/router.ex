@@ -1,3 +1,8 @@
+# The main hubs of Phoenix apps.
+# Match HTTP requests to controller actions,
+# wire up real-time channel handlers,
+# and define a series of pipeline transfromations scoped to a set of routes
+
 defmodule HelloWeb.Router do
   use HelloWeb, :router
 
@@ -23,6 +28,11 @@ defmodule HelloWeb.Router do
     # The :index, and :show are considered `action`s
     # It is the controllers job to define functions for these actions
     get "/", PageController, :index
+
+    resources "/users", UserController, except: [:delete] do
+      resources "/posts", UserController
+    end
+
     get "/hello", HelloController, :index
     get "/hello/:messenger", HelloController, :show
   end
