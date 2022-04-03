@@ -3,6 +3,8 @@
 defmodule HelloWeb.HelloController do
   use HelloWeb, :controller
 
+  plug HelloWeb.Plugs.Locale, "kr" when action in [:index, :show]
+
   def index(conn, _params) do
     render(conn, "index.html")
   end

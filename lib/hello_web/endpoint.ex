@@ -46,6 +46,8 @@ defmodule HelloWeb.Endpoint do
   plug Plug.MethodOverride
   plug Plug.Head
   plug Plug.Session, @session_options
+
+  # function plugs can be used to inspect the connection, or perform any logic.
   plug :introspect
   plug HelloWeb.Router
 

@@ -20,6 +20,8 @@ defmodule HelloWeb.Router do
   scope "/", HelloWeb do
     pipe_through :browser
 
+    # The :index, and :show are considered `action`s
+    # It is the controllers job to define functions for these actions
     get "/", PageController, :index
     get "/hello", HelloController, :index
     get "/hello/:messenger", HelloController, :show
