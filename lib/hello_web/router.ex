@@ -7,7 +7,7 @@ defmodule HelloWeb.Router do
   use HelloWeb, :router
 
   pipeline :browser do
-    plug :accepts, ["html"]
+    plug :accepts, ["html", "text"]
     plug :fetch_session
     plug :fetch_live_flash
     plug :put_root_layout, {HelloWeb.LayoutView, :root}
@@ -29,12 +29,20 @@ defmodule HelloWeb.Router do
     # It is the controllers job to define functions for these actions
     get "/", PageController, :index
 
+    get "/redirect_test", PageController, :redirect_test
+
     resources "/users", UserController, except: [:delete] do
-      resources "/posts", UserController
+      resources "/posts", PostController
     end
 
     get "/hello", HelloController, :index
     get "/hello/:messenger", HelloController, :show
+  end
+
+  scope "/admin", HelloWeb.Admin do
+    pipe_through :browser
+
+    resources "/reviews", ReviewController
   end
 
   # Other scopes may use custom stacks.
