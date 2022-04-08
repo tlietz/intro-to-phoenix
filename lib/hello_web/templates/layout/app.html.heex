@@ -1,6 +1,5 @@
 <main class="container">
-  <p>Locale: <%= @locale %>
-  </p>
+  <p>Locale: <%= @locale %></p>
   <p class="alert alert-info" role="alert">
     <%= get_flash(@conn, :info) %>
   </p>
@@ -9,11 +8,10 @@
   </p>
   <div>
     <!-- Routes.page_path path helper can be used because the alias in `def controller do` in `hello_web.ex` -->
-    <%= link "welcome page" , to: Routes.page_path(@conn, :index) %>
+    <%= link("welcome page", to: Routes.page_path(@conn, :index)) %>
   </div>
 
-  <%= link "hello page" , to: Routes.hello_path(@conn, :index) %>
+  <%= link("hello page", to: Routes.hello_path(@conn, :index)) %>
 
-    <%= @inner_content %>
-
+  <%= @inner_content %>
 </main>

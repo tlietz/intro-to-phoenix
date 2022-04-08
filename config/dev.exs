@@ -22,7 +22,7 @@ config :hello, HelloWeb.Endpoint,
   check_origin: false,
   code_reloader: true,
   debug_errors: true,
-  secret_key_base: "jRoMwukON+dmY0IrLBcQOpIhFIi7JWgFRzH/JGlK/gALeAxNQHKrP4O6ghx187GH",
+  secret_key_base: "WsaiEoyeVFgm7sXMYZ8m7t+a3Nd+JmPP7DA40bi7prQR4hFvKRYnPNRhA4Y1CS+X",
   watchers: [
     # Start the esbuild watcher by calling Esbuild.install_and_run(:default, args)
     esbuild: {Esbuild, :install_and_run, [:default, ~w(--sourcemap=inline --watch)]}

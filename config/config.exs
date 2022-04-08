@@ -15,7 +15,7 @@ config :hello, HelloWeb.Endpoint,
   url: [host: "localhost"],
   render_errors: [view: HelloWeb.ErrorView, accepts: ~w(html json), layout: false],
   pubsub_server: Hello.PubSub,
-  live_view: [signing_salt: "AUSJI1tP"]
+  live_view: [signing_salt: "6V1gHUBq"]
 
 # Configures the mailer
 #
