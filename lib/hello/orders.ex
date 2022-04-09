@@ -68,6 +68,8 @@ defmodule Hello.Orders do
     |> Repo.preload(line_items: [:product])
   end
 
+  def get_order!(id), do: Repo.get(Order, id)
+
   @doc """
   Creates a order.
 
